@@ -1,0 +1,56 @@
+{
+  "name": "@corpsmap/map-icons-react",
+  "version": "1.1.2",
+  "type": "module",
+  "main": "./dist/map-icons-react.umd.cjs",
+  "module": "./dist/map-icons-react.es.js",
+  "exports": {
+    "types": "./dist/map-icons-react.d.ts",
+    "import": "./dist/map-icons-react.es.js",
+    "require": "./dist/map-icons-react.umd.cjs"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "npm run build-lib && npm run build-docs",
+    "build-lib": "vite build -m lib",
+    "build-docs": "vite build",
+    "buildIcons": "node ./script/index-icons.js --input icons/**/*.svg --output lib/build/data.json && node ./script/build-icons.js",
+    "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "pub": "npm run build && cp ./components/__generated__/icons.d.ts ./dist/map-icons-react.d.ts && npm publish --access=public",
+    "major": "npm version major && npm run pub",
+    "minor": "npm version minor && npm run pub",
+    "patch": "npm version patch && npm run pub"
+  },
+  "dependencies": {},
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/generator": "^7.23.0",
+    "@types/react": "^18.2.15",
+    "@types/react-dom": "^18.2.7",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "@vitejs/plugin-react": "^4.0.3",
+    "cheerio": "^1.0.0-rc.12",
+    "eslint": "^8.45.0",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.3",
+    "fs-extra": "^11.1.1",
+    "globby": "^13.2.2",
+    "lodash.merge": "^4.6.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "svgson": "^5.3.1",
+    "trim-newlines": "^5.0.0",
+    "typescript": "^5.0.2",
+    "vite": "^4.4.5",
+    "yargs": "^17.7.2"
+  }
+}

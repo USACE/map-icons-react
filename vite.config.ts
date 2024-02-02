@@ -10,6 +10,8 @@ export default defineConfig(({ mode }) => {
       publicDir: false,
       build: {
         lib: {
+          name: "MapIconsReact",
+          fileName: (format) => `map-icons-react.${format}.js`,
           entry: "lib/index.ts",
         },
         rollupOptions: {
